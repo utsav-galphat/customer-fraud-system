@@ -2,7 +2,7 @@ package org.utech.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.utech.FraudCheckHistoryRepository;
+import org.utech.repository.FraudCheckHistoryRepository;
 import org.utech.entity.FraudCheckHistory;
 
 import java.time.LocalDateTime;
