@@ -8,10 +8,7 @@ import org.utech.entity.FraudCheckHistory;
 import java.time.LocalDateTime;
 
 @Service
-@AllArgsConstructor
-public class FraudCheckHistoryService {
-
-    private final FraudCheckHistoryRepository fraudCheckHistoryRepository;
+public record FraudCheckHistoryService(FraudCheckHistoryRepository fraudCheckHistoryRepository) {
 
     public boolean isFraudulentCustomer(Integer customerId) {
         fraudCheckHistoryRepository.save(

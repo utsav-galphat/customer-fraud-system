@@ -9,10 +9,8 @@ import org.utech.service.CustomerService;
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/customers")
-@AllArgsConstructor
-public class CustomerController {
+public record CustomerController(CustomerService customerService) {
 
-    private CustomerService customerService;
 
     @GetMapping("/healthcheck")
     public String healthCheck(){

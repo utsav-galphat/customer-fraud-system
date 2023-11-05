@@ -9,11 +9,8 @@ import org.utech.entity.Customer;
 import org.utech.repository.CustomerRepository;
 
 @Service
-@AllArgsConstructor
-public class CustomerService {
+public record CustomerService(CustomerRepository customerRepository,RestTemplate restTemplate) {
 
-    private final CustomerRepository customerRepository;
-    private final RestTemplate restTemplate;
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
                 .first_name(request.first_name())

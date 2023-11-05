@@ -8,12 +8,8 @@ import org.utech.service.FraudCheckHistoryService;
 
 @RestController
 @RequestMapping("api/v1/fraud-check")
-@AllArgsConstructor
 @Slf4j
-public class FraudCheckHistoryController {
-
-    private final FraudCheckHistoryService fraudCheckHistoryService;
-
+public record FraudCheckHistoryController(FraudCheckHistoryService fraudCheckHistoryService) {
 
     @GetMapping("/{customerId}")
     public FraudCheckResponse isFraudster(@PathVariable Integer customerId){
